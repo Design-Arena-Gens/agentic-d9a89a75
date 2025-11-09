@@ -1,0 +1,73 @@
+:root {
+  --bg: #0b0f1a;
+  --panel: #111827;
+  --muted: #94a3b8;
+  --text: #e5e7eb;
+  --accent: #60a5fa;
+  --accent-2: #34d399;
+  --danger: #f87171;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: radial-gradient(1200px 800px at 20% 0%, #0d1220 0%, var(--bg) 60%);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 2rem 1rem 5rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  backdrop-filter: blur(8px);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 160px 160px auto;
+  gap: 0.75rem;
+}
+
+input, button, select {
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  padding: 0.75rem 0.9rem;
+  font-size: 0.95rem;
+}
+
+button.primary { background: linear-gradient(90deg, var(--accent), #7c3aed); border: none; }
+button.ghost { background: rgba(255,255,255,0.02); }
+button.success { background: linear-gradient(90deg, var(--accent-2), #22c55e); border: none; }
+button.danger { background: linear-gradient(90deg, var(--danger), #ef4444); border: none; }
+
+.list { margin-top: 1rem; display: grid; gap: 0.75rem; }
+.item { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.75rem; padding: 0.75rem; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+.item .title { font-weight: 600; }
+.item .meta { color: var(--muted); font-size: 0.9rem; }
+
+.badge { padding: 0.2rem 0.55rem; border-radius: 999px; font-size: 0.75rem; background: rgba(96,165,250,0.12); border: 1px solid rgba(96,165,250,0.4); color: #bfdbfe; }
+
+.footer { opacity: 0.7; font-size: 0.85rem; margin-top: 1rem; }
+
+@media (max-width: 720px) {
+  .controls { grid-template-columns: 1fr 1fr 1fr auto; }
+}
